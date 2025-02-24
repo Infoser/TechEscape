@@ -4,196 +4,162 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css.css">
     <style>
-        /* From Uiverse.io by Navarog21 */ 
-        * { padding: 0; margin: 0; box-sizing: border-box; } 
-        button { font-family: inherit; }
+        /* From Uiverse.io by doniaskima */ 
+.btn-17,
+.btn-17 *,
+.btn-17 :after,
+.btn-17 :before,
+.btn-17:after,
+.btn-17:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
 
-        /* Flexbox container for vertical alignment */
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh; /* Full height for centering */
-        }
+.btn-17 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+  text-transform: uppercase;
+}
 
-        button {
-            position: relative;
-            width: 11em;
-            height: 4em;
-            outline: none;
-            transition: 0.1s;
-            background-color: transparent;
-            border: none;
-            font-size: 13px;
-            font-weight: bold;
-            color: #ddebf0;
-            margin: 10px; /* Adds spacing between buttons */
-        }
+.btn-17:disabled {
+  cursor: default;
+}
 
-        #clip {
-            --color: #2761c3;
-            position: absolute;
-            top: 0;
-            overflow: hidden;
-            width: 100%;
-            height: 100%;
-            border: 5px double var(--color);
-            box-shadow: inset 0px 0px 15px #195480;
-            -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-        }
+.btn-17:-moz-focusring {
+  outline: auto;
+}
 
-        .arrow {
-            position: absolute;
-            transition: 0.2s;
-            background-color: #2761c3;
-            top: 35%;
-            width: 11%;
-            height: 30%;
-        }
+.btn-17 svg {
+  display: block;
+  vertical-align: middle;
+}
 
-        #leftArrow {
-            left: -13.5%;
-            -webkit-clip-path: polygon(100% 0, 100% 100%, 0 50%);
-        }
+.btn-17 [hidden] {
+  display: none;
+}
 
-        #rightArrow {
-            -webkit-clip-path: polygon(100% 49%, 0 0, 0 100%);
-            left: 102%;
-        }
+.btn-17 {
+  border-radius: 99rem;
+  border-width: 2px;
+  padding: 0.8rem 3rem;
+  z-index: 0;
+}
 
-        button:hover #rightArrow {
-            background-color: #27c39f;
-            left: -15%;
-            animation: 0.6s ease-in-out both infinite alternate rightArrow8;
-        }
+.btn-17,
+.btn-17 .text-container {
+  overflow: hidden;
+  position: relative;
+}
 
-        button:hover #leftArrow {
-            background-color: #27c39f;
-            left: 103%;
-            animation: 0.6s ease-in-out both infinite alternate leftArrow8;
-        }
+.btn-17 .text-container {
+  display: block;
+  mix-blend-mode: difference;
+}
 
-        .corner {
-            position: absolute;
-            width: 4em;
-            height: 4em;
-            background-color: #2761c3;
-            box-shadow: inset 1px 1px 8px #2781c3;
-            transform: scale(1) rotate(45deg);
-            transition: 0.2s;
-        }
+.btn-17 .text {
+  display: block;
+  position: relative;
+}
 
-        #rightTop {
-            top: -1.98em;
-            left: 91%;
-        }
+.btn-17:hover .text {
+  -webkit-animation: move-up-alternate 0.3s forwards;
+  animation: move-up-alternate 0.3s forwards;
+}
 
-        #leftTop {
-            top: -1.96em;
-            left: -3.0em;
-        }
+@-webkit-keyframes move-up-alternate {
+  0% {
+    transform: translateY(0);
+  }
 
-        #leftBottom {
-            top: 2.10em;
-            left: -2.15em;
-        }
+  50% {
+    transform: translateY(80%);
+  }
 
-        #rightBottom {
-            top: 45%;
-            left: 88%;
-        }
+  51% {
+    transform: translateY(-80%);
+  }
 
-        button:hover #leftTop {
-            animation: 0.1s ease-in-out 0.05s both changeColor8,
-            0.2s linear 0.4s both lightEffect8;
-        }
+  to {
+    transform: translateY(0);
+  }
+}
 
-        button:hover #rightTop {
-            animation: 0.1s ease-in-out 0.15s both changeColor8,
-            0.2s linear 0.4s both lightEffect8;
-        }
+@keyframes move-up-alternate {
+  0% {
+    transform: translateY(0);
+  }
 
-        button:hover #rightBottom {
-            animation: 0.1s ease-in-out 0.25s both changeColor8,
-            0.2s linear 0.4s both lightEffect8;
-        }
+  50% {
+    transform: translateY(80%);
+  }
 
-        button:hover #leftBottom {
-            animation: 0.1s ease-in-out 0.35s both changeColor8,
-            0.2s linear 0.4s both lightEffect8;
-        }
+  51% {
+    transform: translateY(-80%);
+  }
 
-        button:hover .corner {
-            transform: scale(1.25) rotate(45deg);
-        }
+  to {
+    transform: translateY(0);
+  }
+}
 
-        button:hover #clip {
-            animation: 0.2s ease-in-out 0.55s both greenLight8;
-            --color: #27c39f;
-        }
+.btn-17:after,
+.btn-17:before {
+  --skew: 0.2;
+  background: #fff;
+  content: "";
+  display: block;
+  height: 102%;
+  left: calc(-50% - 50% * var(--skew));
+  pointer-events: none;
+  position: absolute;
+  top: -104%;
+  transform: skew(calc(150deg * var(--skew))) translateY(var(--progress, 0));
+  transition: transform 0.2s ease;
+  width: 100%;
+}
 
-        @keyframes changeColor8 {
-            from {
-                background-color: #2781c3;
-            }
-            to {
-                background-color: #27c39f;
-            }
-        }
+.btn-17:after {
+  --progress: 0%;
+  left: calc(50% + 50% * var(--skew));
+  top: 102%;
+  z-index: -1;
+}
 
-        @keyframes lightEffect8 {
-            from {
-                box-shadow: 1px 1px 5px #27c39f;
-            }
-            to {
-                box-shadow: 0 0 2px #27c39f;
-            }
-        }
+.btn-17:hover:before {
+  --progress: 100%;
+}
 
-        @keyframes greenLight8 {
-            from {
-            }
-            to {
-                box-shadow: inset 0px 0px 32px #27c39f;
-            }
-        }
+.btn-17:hover:after {
+  --progress: -102%;
+}
 
-        @keyframes leftArrow8 {
-            from {
-                transform: translate(0px);
-            }
-            to {
-                transform: translateX(10px);
-            }
-        }
-
-        @keyframes rightArrow8 {
-            from {
-                transform: translate(0px);
-            }
-            to {
-                transform: translateX(-10px);
-            }
-        }
 
     </style>
 </head>
 
 
-<body bgcolor='black' background="">
-
-    <hr color = 'white'>
-
-    
-    <div align = 'center'>
-    <img src="head.png" alt="header" >
-    </div>
+<body bgcolor='black' background=""> 
     <!-- Button container for vertical alignment -->
-    <div class="button-container">
-        <button>
-            <h2> LEVEL 1 </h2>
+    <div class="button-container" style="margin: auto;" >
+        <img src="head.png" alt="header">
+        
+        <button style="margin: auto;"">
+            <a href="level1.html"><h2> LEVEL 1 </h2>
             <div id="clip">
                 <div id="leftTop" class="corner"></div>
                 <div id="rightBottom" class="corner"></div>
@@ -202,10 +168,11 @@
             </div>
             <span id="rightArrow" class="arrow"></span>
             <span id="leftArrow" class="arrow"></span>
+        </a>
         </button>
         
-        <button>
-            <H2>LEVEL 2</H2>
+        <button style="margin: auto;">
+            <a href="level2.html"><H2>LEVEL 2</H2>
             <div id="clip">
                 <div id="leftTop" class="corner"></div>
                 <div id="rightBottom" class="corner"></div>
@@ -214,10 +181,11 @@
             </div>
             <span id="rightArrow" class="arrow"></span>
             <span id="leftArrow" class="arrow"></span>
+        </a>
         </button>
 
-        <button>
-            <a href="https://www.youtube.com/watch?v=BT4WzyT2g8k"><H2>LEVEL 3</H2> </a>
+        <button style="margin: auto;">
+            <a href="level3.html"><H2>LEVEL 3</H2>
             <div id="clip">
                 <div id="leftTop" class="corner"></div>
                 <div id="rightBottom" class="corner"></div>
@@ -226,21 +194,16 @@
             </div>
             <span id="rightArrow" class="arrow"></span>
             <span id="leftArrow" class="arrow"></span>
+            </a>
         </button>
-
-        <button>
-        <H2>LEVEL 4</H2>
-            <div id="clip">
-                <div id="leftTop" class="corner"></div>
-                <div id="rightBottom" class="corner"></div>
-                <div id="rightTop" class="corner"></div>
-                <div id="leftBottom" class="corner"></div>
-            </div>
-            <span id="rightArrow" class="arrow"></span>
-            <span id="leftArrow" class="arrow"></span>
-        </button>
+        <button class="btn-17" style="margin: auto;">
+            <span class="text-container">
+              <a href=""><span class="text">Submit</span></a>
+            </span>
+          </button>
+        
     </div>
-    <h1> Submit Your Answers Here:  <img src="" alt=""></h1>
+
 
 
 </body>
